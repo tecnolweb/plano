@@ -47,23 +47,10 @@ label {
 .logo {
   max-height: 90px;
   max-width: 200px;
-  margin: 0px 20% 0px;
+  margin: auto;
 
 }
 
-.logo2 {
-  max-height: 90px;
-  max-width: 100px;
-  margin-left: auto;
- 
-}
-
-.logo3 {
-  max-height: 90px;
-  max-width: 200px;
-  margin-bottom: 40px;
- 
- 
 }
 
 footer {
