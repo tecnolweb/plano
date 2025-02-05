@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planejameto/Plano de aula - 2025</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container justify-content-center">
+          <span class="fs-2" style="display: flex; flex-direction: column">
+            <img src="./assets/brejo.png" class="logo" />
+            <img src="./assets/selo.png" class="logo2" />
+            <img src="./assets/edu.png" class="logo3" />
+            <span> Planejameto/Plano de Aula - 2025 </span>
+          </span>
+        </div>
+      </nav>
+    </header>
+    <main class="mt-3 mb-5">
+      <div class="container p-5">
+        <div id="erro"></div>
+        <form id="form" onsubmit="redirecionar(event)">
+          <div class="row" id="cabecalho-form">
+            <div class="col mb-3">
+              <label for="nome-professor" class="form-label"
+                >Nome do professor
+              </label>
+              <input
+                type="text"
+                class="form-control shadow"
+                id="nome-professor"
+                name="Nome do professor"
+              />
+            </div>
+            <div class="col mb-3">
+              <label for="Data" class="form-label"> Data </label>
+              <input
+                type="text"
+                class="form-control shadow"
+                id="data"
+                name="data"
+              />
+            </div>
+            <div class="col mb-3">
+              <label for="Instituição" class="form-label"> Instituição </label>
+              <input
+                type="text"
+                class="form-control shadow"
+                id="Instituição"
+                name="Instituição"
+              />
+            </div>
+          </div>
+          <div class="row" id="ano-disciplina">
+            <div class="col mb-3">
+              <label for="ano" class="form-label">Ano</label>
+              <select type="text" class="form-select shadow" id="ano" required>
+                <option value=""></option>
+               <!--<option value="primeiro">1º Ano</option>
+                <option value="segundo">2º Ano</option>
+                <option value="terceiro">3º Ano</option>-->
+                <option value="quarto">4º Ano</option>
+               <!-- <option value="quinto">5º Ano</option>
+                <option value="sexto">6º Ano</option>
+                <option value="setimo">7º Ano</option>
+                <option value="oitavo">8º Ano</option>
+                <option value="nono">9º Ano</option>-->
+              </select>
+            </div>
+            <div class="col mb-3">
+              <label for="disciplina" class="form-label">Disciplina</label>
+              <select
+                type="text"
+                class="form-select shadow"
+                id="disciplina"
+                name="Disciplina"
+                required
+              >
+                <option value=""></option>
+                <option value="lingua_portuguesa">Português</option>
+                <option value="matematica">Matemática</option>
+                <option value="arte">Artes</option>
+                <option value="ciencias">Ciências</option>
+                <option value="geografia">Geografia</option>
+                <option value="historia">História</option>
+                <option value="educacao_fisica">Educação Física</option>
+                <!--<option value="lingua_inglesa">Inglês</option>-->
+                <option value="ensino_religioso">Ensino Religioso</option>
+               <!--<option value="computacao">Informática</option>-->
+              </select>
+            </div>
+          </div>
+          <div class="row" id="uniTematica-objeto">
+            <div class="col mb-3">
+              <label for="disciplina" class="form-label"
+                >Unidade Temática</label
+              >
+              <select
+                type="text"
+                class="form-control shadow disabled"
+                id="unidadeTematica"
+                name="Unidade Temática"
+                required
+                disabled
+              ></select>
+            </div>
+            <div class="col mb-3">
+              <label for="objetos-conhecimento" class="form-label">
+                Objeto de Conhecimento
+              </label>
+              <select
+                type="text"
+                class="form-select shadow disabled"
+                id="objetos-conhecimento"
+                name="Objetos de Conhecimento"
+                required
+                disabled
+              ></select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="habilidades" class="form-label"> Habilidades da BNCC </label>
+            <select
+              class="form-select shadow disabled"
+              id="habilidades"
+              name="Habilidades"
+              required
+              disabled
+            ></select>
+          </div>
+
+          <div class="mb-3">
+            <label for="objetivos" class="form-label">Objetivo</label>
+            <textarea
+              type="text"
+              class="form-control shadow"
+              id="objetivos"
+              name="Objetivo(s)"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="praticas-linguagem" class="form-label"
+              >Práticas de Linguagem</label
+            >
+            <input
+              type="text"
+              class="form-control shadow"
+              id="praticas-linguagem"
+              name="Práticas de Linguagem"
+            />
+          </div>
+          <div class="mb-3">
+            <label
+              for="recursos-didaticos"
+              class="form-label"
+              id="recursos-didaticos"
+            >
+              Recursos Didáticos
+            </label>
+            <br />
+            <div class="form-check form-check-inline mt-2">
+              <span class="form-check-label" for="recurso 1">Lousa</span>
+              <input
+                class="form-check-input recurso shadow"
+                id="recurso 1"
+                type="checkbox"
+                value="Lousa"
+                name="Recurso Didático"
+              />
+            </div>
+            <div class="form-check form-check-inline">
+              <span class="form-check-label" for="recurso 2">Som</span>
+              <input
+                class="form-check-input recurso shadow"
+                id="recurso 2"
+                type="checkbox"
+                value="Som"
+                name="Recurso Didático"
+              />
+            </div>
+            <div class="form-check form-check-inline">
+              <span class="form-check-label" for="recurso 3"
+                >Livro Didático</span
+              >
+              <input
+                class="form-check-input recurso shadow"
+                id="recurso 3"
+                type="checkbox"
+                value="Livro Didático"
+                name="Recurso Didático"
+              />
+            </div>
+          </div>
+          <div class="mb-3" id="novoRecurso"></div>
+          <div class="mb-3 text-center">
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="novoRecurso()"
+            >
+              Adicionar Novo Recurso</button
+            ><br />
+          </div>
+          <div class="mb-3">
+            <label for="metodologias" class="form-label">Metodologia</label>
+            <textarea
+              class="form-control shadow"
+              id="metodologias"
+              rows="3"
+              name="Metodologias"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="avaliacao" class="form-label">Avaliação</label>
+            <textarea
+              class="form-control shadow"
+              id="avaliacao"
+              rows="3"
+              name="Avaliacao"
+              required
+            ></textarea>
+          </div>
+          <div class="d-flex justify-content-center mt-5">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#visualizarDados"
+              onclick="renderizarDados()"
+            >
+              Continuar
+            </button>
+            <button
+              class="btn btn-success ms-3"
+              onclick="recarregarFormulario()"
+            >
+              Limpar
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="modal">
+        <div
+          class="modal fade"
+          id="visualizarDados"
+          tabindex="-1"
+          aria-labelledby="visualizarDadosLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl p-3">
+            <div class="modal-content p-3">
+              <div class="modal-header">
+                <p class="fs-1 text-center">Plano de Ensino - Fundamental</p>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <hr />
+                <div id="cabecalho">
+                  <div class="infos-cabecalho">
+                    <span class="fs-5 legenda"> Professor(a) </span>
+                    <span id="info-professor"> </span>
+                  </div>
+                  <div class="infos-cabecalho">
+                    <span class="fs-5 legenda"> Turma </span>
+                    <span id="info-turma"> </span>
+                  </div>
+                  <div class="infos-cabecalho">
+                    <span class="fs-5 legenda"> Instituição </span>
+                    <span id="info-instituição"> </span>
+                  </div>
+                </div>
+                <hr />
+                <div id="infos">
+                  <span class="fs-5 legenda"> Disciplina </span>
+                  <span id="info-disciplina"> </span>
+                  <span class="fs-5 legenda"> Unidade Temática </span>
+                  <span id="info-unidade-temática"></span>
+                  <span class="fs-5 legenda"> Habilidades </span>
+                  <span id="info-habilidades"></span>
+                  <span class="fs-5 legenda"> Práticas de Linguagem </span>
+                  <span id="info-praticas"></span>
+                  <span class="fs-5 legenda"> Objeto de conhecimento </span>
+                  <span id="info-objeto-conhecimento"></span>
+                  <span class="fs-5 legenda"> Objetivo </span>
+                  <span id="info-objetivos"></span>
+                  <span class="fs-5 legenda"> Recursos Didáticos </span>
+                  <span id="info-recursos"></span>
+                  <span class="fs-5 legenda"> Metodologias: </span>
+                  <span id="info-metodologias"></span>
+                  <span class="fs-5 legenda"> Avaliação </span>
+                  <span id="info-avaliação"></span>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Editar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  onclick="redirecionar(event)"
+                >
+                  Finalizar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center"> 
+        <a href="index.html" class="btn btn-outline-dark"> Voltar</a>
+      </div>
+    </main>
+    <footer>
+      <div class="div d-flex flex-column" id="footer-info">
+        <img src="./assets/mortarboard.png" class="logo" />
+        <span class="mt-2">Desenvolvido por: @Gilberto</span>
+      </div>
+      <br />
+     
+    </footer>
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
